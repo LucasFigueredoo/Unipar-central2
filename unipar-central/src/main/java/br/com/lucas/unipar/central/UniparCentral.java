@@ -5,7 +5,11 @@
 package br.com.lucas.unipar.central;
 
 import br.com.lucas.unipar.central.exceptions.EntidadeNaoInformadaException;
+import br.com.lucas.unipar.central.models.Cidade;
+import br.com.lucas.unipar.central.models.Estado;
 import br.com.lucas.unipar.central.models.Pais;
+import br.com.lucas.unipar.central.services.CidadeService;
+import br.com.lucas.unipar.central.services.EstadoService;
 import br.com.lucas.unipar.central.services.PaisService;
 import javax.swing.JOptionPane;
 
@@ -21,6 +25,19 @@ public class UniparCentral {
             pais.setNome("Brasil");
             pais.setSigla("BR");
             paisService.validar(pais);
+            
+            EstadoService estadoService = new EstadoService();
+            Estado estado = new Estado();
+            estado.setId(1);
+            estado.setNome("Paraná");
+            estado.setSigla("PR");
+            estadoService.validar(estado);
+            
+            CidadeService cidadeService = new CidadeService();
+            Cidade cidade = new Cidade();
+            cidade.setId(1);
+            cidade.setNome("Toledo");
+            cidadeService.validar(cidade);
         
         } catch (EntidadeNaoInformadaException ex){
             

@@ -4,6 +4,7 @@ public class Cidade {
     
     private int id;
     private String nome;
+    private String ra;
     private Estado estado;
 
     public Cidade() {
@@ -13,6 +14,14 @@ public class Cidade {
         this.id = id;
         this.nome = nome;
         this.estado = estado;
+    }
+
+    public String getRa() {
+        return ra;
+    }
+
+    public void setRa(String ra) {
+        this.ra = ra;
     }
 
     public int getId() {
@@ -41,7 +50,7 @@ public class Cidade {
 
     @Override
     public String toString() {
-        return "Cidade{" + "id=" + id + ", nome=" + nome + ", estado=" + estado + '}';
+        return "Cidade{" + "id=" + id + ", nome=" + nome + ", ra=" + ra + ", estado=" + estado + '}';
     }
 
 }
