@@ -8,7 +8,7 @@ import java.util.Date;
  *
  * @author 00240578
  */
- public class Pessoa {
+ public class Pessoa extends AbstractBaseEntity {
 
     private int id;
     private String nome;

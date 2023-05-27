@@ -1,6 +1,6 @@
 package br.com.lucas.unipar.central.models;
 
-public class Endereco {
+public class Endereco extends AbstractBaseEntity {
     
     private int id;
     private String logradouro;

@@ -4,7 +4,7 @@ package br.com.lucas.unipar.central.models;
  *
  * @author 00240578
  */
-public class Pais {
+public class Pais extends AbstractBaseEntity {
     
     private int id;
     private String nome;

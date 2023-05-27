@@ -1,6 +1,6 @@
 package br.com.lucas.unipar.central.models;
 
-public class Telefone {
+public class Telefone extends AbstractBaseEntity {
     
     private int id;
     private int numero;
