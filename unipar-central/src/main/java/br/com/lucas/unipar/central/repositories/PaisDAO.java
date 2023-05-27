@@ -36,12 +36,12 @@ public class PaisDAO {
        try {
        
            conn = new DatabaseUtils().getConnection();
-           pstm = conn.preparedStatement
+           pstmt = conn.preparedStatement(FIND_ALL);
            
        } finally {
            
            if (pstmt != null)
-               pstm.close();
+               pstmt.close();
            
            if (conn != null)
                conn.close();
