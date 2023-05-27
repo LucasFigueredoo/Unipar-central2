@@ -1,7 +1,9 @@
 package br.com.lucas.unipar.central.repositories;
 
 import br.com.lucas.unipar.central.models.Pais;
+import br.com.lucas.unipar.central.utils.DatabaseUtils;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,11 +31,17 @@ public class PaisDAO {
        
        ArrayList<Pais> retorno = new ArrayList<>();
        Connection conn = null;
+       PreparedStatement pstmt = null;
        
        try {
        
+           conn = new DatabaseUtils().getConnection();
+           pstm = conn.preparedStatement
            
        } finally {
+           
+           if (pstmt != null)
+               pstm.close();
            
            if (conn != null)
                conn.close();

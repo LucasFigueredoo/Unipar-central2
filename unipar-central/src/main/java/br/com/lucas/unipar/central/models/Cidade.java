@@ -1,6 +1,6 @@
 package br.com.lucas.unipar.central.models;
 
-public class Cidade {
+public class Cidade extends AbstractBaseEntity{
     
     private int id;
     private String nome;
