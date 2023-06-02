@@ -12,7 +12,7 @@ import java.util.List;
 public class PaisDAO {
     
     private static final String INSERT =
-            "INSERT INTO PAIS(id, nome, sgila, ra)" +
+            "INSERT INTO PAIS(id, nome, sigla, ra)" +
             "VALUES(?, ?, ?, ?)";
     
     private static final String FIND_ALL =
@@ -172,9 +172,28 @@ public class PaisDAO {
        
    }
    
-   public void delete(int id) {
+   public void delete(int id) throws SQLException {
        
-       Connection
+       Connection conn = null;
+       PreparedStatement pstmt = null;
+       
+       try {
+           
+           conn = new DatabaseUtils().getConnection();
+           pstmt = conn.prepareStatement(DELETE_BY_ID);
+           pstmt.setInt(1, id);
+           
+           pstmt.executeUpdate();
+           
+       } finally {
+           
+           if (pstmt != null)
+               pstmt.close();
+           
+           if (conn != null)
+               conn.close();
+           
+       }
        
    }
   
